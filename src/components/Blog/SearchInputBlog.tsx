@@ -10,7 +10,7 @@ const SearchInputBlog = () => {
   const [blogs, setBlogs] = useState([]);
 
   const clickSearch = async (value: string) => {
-    const res = await axios.post("http://localhost:8000/blogs/search/content", {
+    const res = await axios.post("https://redux-blog-api.herokuapp.com/blogs/search/content", {
       content: value,
     });
     setBlogs(res.data);

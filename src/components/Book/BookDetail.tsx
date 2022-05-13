@@ -20,7 +20,7 @@ const BookDetail: FC = () => {
 
   useEffect(() => {
     const fetchGetBook = async () => {
-      const res = await axios.get(`http://localhost:8000/books/${bookId}`);
+      const res = await axios.get(`https://redux-blog-api.herokuapp.com/books/${bookId}`);
       if (res.status !== 200) {
         alert(Error);
       }

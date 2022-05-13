@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { BLOG } from "../../../types/type";
 
-const apiUrl = "http://localhost:8000";
+const apiUrl = "https://redux-blog-api.herokuapp.com";
 
 //ブログ情報を取得
 export const fetchAsyncGetBlogs = createAsyncThunk("blogs/get", async () => {

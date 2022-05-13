@@ -42,9 +42,12 @@ const Blog: FC<STATICPROPS> = ({ blogs }) => {
 
   //検索機能（コンテント）
   const clickSearch = async (value: string) => {
-    const res = await axios.post("http://localhost:8000/blogs/search/content", {
-      content: value,
-    });
+    const res = await axios.post(
+      "https://redux-blog-api.herokuapp.com/blogs/search/content",
+      {
+        content: value,
+      }
+    );
     if (res.data) {
       setBlogData(res.data);
       setMsg("");
@@ -59,7 +62,7 @@ const Blog: FC<STATICPROPS> = ({ blogs }) => {
   //検索機能（カテゴリー）
   const categorySearch = async (value: string) => {
     const res = await axios.post(
-      "http://localhost:8000/blogs/search/category",
+      "https://redux-blog-api.herokuapp.com/blogs/search/category",
       {
         category: value,
       }

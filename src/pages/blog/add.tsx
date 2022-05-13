@@ -67,9 +67,9 @@ const Add: FC = () => {
   //画像をアップロード
   const uploadPhoto = async () => {
     if (photo) {
-      const url = await fetch("http://localhost:8000/s3url/").then((res) =>
-        res.json()
-      );
+      const url = await fetch(
+        "https://redux-blog-api.herokuapp.com/s3url/"
+      ).then((res) => res.json());
       const imgUrl = url.url;
 
       await fetch(imgUrl, {

@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { BOOK } from "../../../types/type";
 import { save, load } from "redux-localstorage-simple";
 
-const apiUrl = "http://localhost:8000";
+const apiUrl = "https://redux-blog-api.herokuapp.com";
 
 //アクション名(books/get)
 //本情報を取得

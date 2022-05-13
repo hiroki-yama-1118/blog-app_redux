@@ -68,7 +68,7 @@ const Home = () => {
     console.log("画像アップロード");
 
     // const urlArray = [];
-    const url = await fetch("http://localhost:8000/s3url/").then((res) =>
+    const url = await fetch("https://redux-blog-api.herokuapp.com/s3url/").then((res) =>
       res.json()
     );
     console.dir("upload" + JSON.stringify(url.url));

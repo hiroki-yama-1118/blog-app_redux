@@ -1,6 +1,6 @@
 import fetch from "node-fetch";
 
-const uri = "http://localhost:8000";
+const uri = "https://redux-blog-api.herokuapp.com";
 
 export const getAllBlogsData = async () => {
   const data = await fetch(`${uri}/blogs/`);
