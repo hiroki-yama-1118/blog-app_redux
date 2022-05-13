@@ -38,7 +38,7 @@ const Blog: FC<STATICPROPS> = ({ blogs }) => {
   //表示データ更新
   useEffect(() => {
     setBlogData(blogs);
-  }, []);
+  }, [blogs]);
 
   //検索機能（コンテント）
   const clickSearch = async (value: string) => {

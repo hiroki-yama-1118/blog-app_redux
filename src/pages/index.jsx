@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 // import { useRouter } from "next/router";
 // import { useEffect } from "react";
 
@@ -54,6 +55,7 @@
 
 import React from "react";
 import { useState } from "react";
+import Image from "next/image";
 
 const Home = () => {
   const [photo, setPhoto] = useState();
@@ -68,8 +70,8 @@ const Home = () => {
     console.log("画像アップロード");
 
     // const urlArray = [];
-    const url = await fetch("https://redux-blog-api.herokuapp.com/s3url/").then((res) =>
-      res.json()
+    const url = await fetch("https://redux-blog-api.herokuapp.com/s3url/").then(
+      (res) => res.json()
     );
     console.dir("upload" + JSON.stringify(url.url));
     const imgUrl = url.url;
@@ -91,7 +93,7 @@ const Home = () => {
       <input type="file" onChange={selectPhoto} />
       <button onClick={uploadPhoto}>Upload</button>
       <div>
-        <img src={img} />
+        <Image src={img} />
       </div>
     </div>
   );

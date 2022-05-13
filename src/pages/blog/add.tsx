@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import { Formik, Form, Field } from "formik";
 import React, { FC, useState } from "react";
 import CheckBox from "../../components/Form/CheckBox";
@@ -12,6 +13,7 @@ import {
 import { BLOG } from "../../types/type";
 import * as Yup from "yup";
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 const AddBlogSchema = Yup.object().shape({
   title: Yup.string()
@@ -145,7 +147,7 @@ const Add: FC = () => {
         </div>
         {img && (
           <div className="mb-10 flex justify-center">
-            <img src={img} width={400} height={"auto"} />
+            <Image src={img} width={400} height={"auto"} />
           </div>
         )}
 
