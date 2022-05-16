@@ -150,18 +150,18 @@ const Blog: FC<STATICPROPS> = ({ blogs }) => {
 export default Blog;
 
 //SSGの場合
-// export const getStaticProps: GetStaticProps = async () => {
-//   const blogs = await getAllBlogsData();
-//   return {
-//     props: { blogs },
-//     revalidate: 3,
-//   };
-// };
-
-//SSRの場合（本来はSSGで表示、現状は投稿した記事をすぐに反映させたいためSSRで表示）
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const blogs = await getAllBlogsData();
   return {
     props: { blogs },
+    revalidate: 3,
   };
 };
+
+//SSRの場合（本来はSSGで表示、現状は投稿した記事をすぐに反映させたいためSSRで表示）
+// export const getServerSideProps: GetServerSideProps = async () => {
+//   const blogs = await getAllBlogsData();
+//   return {
+//     props: { blogs },
+//   };
+// };
