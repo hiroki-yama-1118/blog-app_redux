@@ -71,7 +71,7 @@ const Add: FC = () => {
   const uploadPhoto = async () => {
     if (photo) {
       const url = await fetch(
-        "https://redux-blog-api.herokuapp.com/s3url/"
+        "https://redux-blog-api-v2.herokuapp.com//s3url"
       ).then((res) => res.json());
       const imgUrl = url.url;
 

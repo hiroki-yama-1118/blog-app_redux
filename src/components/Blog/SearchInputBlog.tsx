@@ -12,7 +12,7 @@ const SearchInputBlog = () => {
 
   const clickSearch = async (value: string) => {
     const res = await axios.post(
-      "https://redux-blog-api.herokuapp.com/blogs/search/content",
+      "https://redux-blog-api-v2.herokuapp.com/blogs/search/content",
       {
         content: value,
       }

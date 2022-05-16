@@ -48,7 +48,7 @@ const Add: FC = () => {
   useEffect(() => {
     const fetchGetBook = async () => {
       const res = await axios.get(
-        `https://redux-blog-api.herokuapp.com/books/${bookId}`
+        `https://redux-blog-api-v2.herokuapp.com/books/${bookId}`
       );
       if (res.status !== 200) {
         alert(Error);

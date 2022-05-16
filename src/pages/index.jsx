@@ -71,9 +71,9 @@ const Home = () => {
     console.log("画像アップロード");
 
     // const urlArray = [];
-    const url = await fetch("https://redux-blog-api.herokuapp.com/s3url/").then(
-      (res) => res.json()
-    );
+    const url = await fetch(
+      "https://redux-blog-api-v2.herokuapp.com//s3url"
+    ).then((res) => res.json());
     console.dir("upload" + JSON.stringify(url.url));
     const imgUrl = url.url;
 

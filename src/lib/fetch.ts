@@ -1,6 +1,6 @@
 import fetch from "node-fetch";
 
-const uri = "https://redux-blog-api.herokuapp.com";
+const uri = "https://redux-blog-api-v2.herokuapp.com";
 
 // export const getAllBlogsData = async () => {
 //   const data = await fetch(`${uri}/blogs/`);
@@ -10,6 +10,9 @@ const uri = "https://redux-blog-api.herokuapp.com";
 export const getAllBlogsData = async () => {
   const data = await fetch(`${uri}/blogs/`);
   const blogs = await data.json();
+  if (!blogs) {
+    return [];
+  }
   return blogs;
 };
 
@@ -27,6 +30,9 @@ export const getAllBlogsData = async () => {
 export const getAllBlogsIds = async () => {
   const res = await fetch(`${uri}/blogs/`);
   const blogs = (await res.json()) as Promise<{ _id: string }[]>;
+  if (!blogs) {
+    return [];
+  }
   return (await blogs).map((blog: { _id: string }) => {
     return {
       params: {
@@ -44,5 +50,8 @@ export const getAllBlogsIds = async () => {
 export const getBlogData = async (id: string) => {
   const res = await fetch(`${uri}/blogs/${id}`);
   const blog: any = await res.json();
+  if (!blog) {
+    return [];
+  }
   return blog;
 };
