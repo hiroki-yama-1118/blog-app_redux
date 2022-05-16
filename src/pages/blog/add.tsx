@@ -133,9 +133,7 @@ const Add: FC = () => {
               <div className="flex">
                 <input
                   className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                  // id={"imagePass"}
                   type={"file"}
-                  // name={"imagePass"}
                   onChange={selectPhoto}
                 />
                 <button
@@ -245,14 +243,6 @@ const Add: FC = () => {
                       登録する
                     </button>
                   </div>
-                  {/* <div className="px-3">
-                    <button
-                      className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
-                      onClick={handleReset}
-                    >
-                      クリア
-                    </button>
-                  </div> */}
                 </div>
               </Form>
             )}
