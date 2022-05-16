@@ -6,6 +6,8 @@ import { useEffect } from "react";
  * @returns Homeページ
  */
 export default function Home() {
+  console.log("index.tsx");
+
   //ルーターリンク
   const router = useRouter();
   //ブログページに遷移させる

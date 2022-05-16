@@ -2,10 +2,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 import { Formik, Form, Field } from "formik";
 import React, { FC, useState } from "react";
-import CheckBox from "../../components/Form/CheckBox";
-import InputLg from "../../components/Form/InputLg";
-import InputSm from "../../components/Form/InputSm";
-import TextArea from "../../components/Form/TextArea";
 import { useAppDispatch } from "../../ducks/app/hooks";
 import {
   addBlog,
@@ -15,6 +11,10 @@ import { BLOG } from "../../types/type";
 import * as Yup from "yup";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import { CheckBox } from "../../components/Form/CheckBox";
+import { InputLg } from "../../components/Form/InputLg";
+import { InputSm } from "../../components/Form/InputSm";
+import { TextArea } from "../../components/Form/TextArea";
 
 const AddBlogSchema = Yup.object().shape({
   title: Yup.string()
@@ -42,6 +42,8 @@ const AddBlogSchema = Yup.object().shape({
 });
 
 const Add: FC = () => {
+  console.log("Blog:add");
+  
   //画像保存用画像パス
   const [photo, setPhoto] = useState();
   //画面表示用画像パス

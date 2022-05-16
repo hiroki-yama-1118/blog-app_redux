@@ -32,6 +32,8 @@ export const AddBookSchema = Yup.object().shape({
 });
 
 const Add: FC = () => {
+  console.log("book:add");
+
   //画面表示用画像パス
   const [img, setImg] = useState<string>();
   const initialValues: BOOK = {

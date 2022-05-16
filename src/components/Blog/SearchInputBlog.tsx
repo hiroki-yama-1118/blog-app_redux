@@ -7,6 +7,7 @@ import { BLOG } from "../../types/type";
 import Image from "next/image";
 
 const SearchInputBlog = () => {
+  console.log("SearchInputBlog");
   const [keyWord, setKeyWord] = useState("");
   const [blogs, setBlogs] = useState([]);
 

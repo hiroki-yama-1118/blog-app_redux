@@ -18,6 +18,7 @@ type Props = {
 
 const BookList: FC<Props> = (props) => {
   const { books, goOnDetail, pageIndex, perPage } = props;
+  console.log("BookList");
 
   const loading = useSelector(selectLoading);
 

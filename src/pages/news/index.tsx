@@ -11,6 +11,7 @@ import { NEWS } from "../../types/type";
  */
 const News = (props: { topArticles: NEWS[] }) => {
   const newsData = props.topArticles;
+  console.log("news:index");
 
   return (
     <div>

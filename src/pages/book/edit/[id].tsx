@@ -9,10 +9,11 @@ import {
 import { useRouter } from "next/router";
 import axios from "axios";
 import { Form, Formik } from "formik";
-import InputLg from "../../../components/Form/InputLg";
-import CheckBox from "../../../components/Form/CheckBox";
-import InputSm from "../../../components/Form/InputSm";
-import TextArea from "../../../components/Form/TextArea";
+import { CheckBox } from "../../../components/Form/CheckBox";
+import { InputLg } from "../../../components/Form/InputLg";
+import { InputSm } from "../../../components/Form/InputSm";
+import { TextArea } from "../../../components/Form/TextArea";
+
 
 export const AddBookSchema = Yup.object().shape({
   title: Yup.string()
@@ -39,6 +40,8 @@ export const AddBookSchema = Yup.object().shape({
 });
 
 const Add: FC = () => {
+  console.log("edit:add");
+
   const dispatch = useAppDispatch();
   const router = useRouter();
   const [bookData, setBookData] = useState<BOOK>();

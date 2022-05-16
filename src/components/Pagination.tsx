@@ -9,6 +9,7 @@ type Props = {
 
 const Pagination: FC<Props> = (props) => {
   const { pageIndex, setPageIndex, totalCount, perPage } = props;
+  console.log("Pagination");
 
   const range = () => {
     let pageArray: Array<number> = [];

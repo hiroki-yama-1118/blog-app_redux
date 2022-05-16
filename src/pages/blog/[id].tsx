@@ -16,6 +16,8 @@ const BlogDetail: FC<BLOG> = ({
   category,
   imagePass,
 }) => {
+  console.log("blog:id");
+
   // //ディスパッチメソッドを呼べるように
   const dispatch = useAppDispatch();
   const router = useRouter();

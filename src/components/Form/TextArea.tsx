@@ -1,7 +1,7 @@
 import { Field } from "formik";
-import React from "react";
+import React, { FC, memo } from "react";
 
-const InputLg = (props: {
+type Props = {
   errors: any;
   touched: any;
   label: string;
@@ -11,7 +11,12 @@ const InputLg = (props: {
   component: string;
   cols: number;
   rows: number;
-}) => {
+};
+
+/**
+ * テキストエリアフォーム
+ */
+export const TextArea: FC<Props> = memo(function TextArea(props) {
   const {
     errors,
     touched,
@@ -23,6 +28,8 @@ const InputLg = (props: {
     cols,
     rows,
   } = props;
+  console.log("TextArea");
+
   return (
     <div className="flex flex-wrap -mx-3 mb-6">
       <div className="w-full px-3">
@@ -49,6 +56,4 @@ const InputLg = (props: {
       </div>
     </div>
   );
-};
-
-export default InputLg;
+});

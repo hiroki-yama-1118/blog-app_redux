@@ -12,6 +12,7 @@ interface PROPS {
 
 const SideBar: FC<PROPS> = (props) => {
   const { blogs, title, books, categorySearch } = props;
+  console.log("SideBar");
 
   return (
     <div className="h-auto bg-gray-100 p-4 rounded-md shadow">

@@ -1,5 +1,5 @@
 import { Field } from "formik";
-import React from "react";
+import React, { FC, memo } from "react";
 
 export const categoryArry = [
   { id: 1, category: "HTML" },
@@ -14,14 +14,21 @@ export const categoryArry = [
   { id: 10, category: "Java" },
 ];
 
-const CheckBox = (props: {
+type Props = {
   errors: any;
   touched: any;
   label: string;
   inputName: string;
   type: string;
-}) => {
+};
+
+/**
+ * チェックボックスコンポーネント
+ */
+export const CheckBox: FC<Props> = memo(function CheckBox(props) {
   const { errors, touched, label, inputName, type } = props;
+  console.log("CheckBox");
+
   return (
     <div className="flex flex-wrap -mx-3 mb-6">
       <div className="w-full px-3">
@@ -55,6 +62,4 @@ const CheckBox = (props: {
       </div>
     </div>
   );
-};
-
-export default CheckBox;
+});

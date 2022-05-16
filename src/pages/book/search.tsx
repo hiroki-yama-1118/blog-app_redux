@@ -7,6 +7,8 @@ import { BOOK } from "../../types/type";
 import { selectBooks } from "../../ducks/features/book/bookSlice";
 
 const Search: NextPage = () => {
+  console.log("book:search");
+
   const router = useRouter();
   const books = useAppSelector(selectBooks);
 

@@ -12,6 +12,8 @@ import Pagination from "../../components/Pagination";
 import SideBar from "../../components/Layout/SideBar";
 
 const Book: NextPage = () => {
+  console.log("book:index");
+
   const books = useAppSelector(selectBooks);
   const dispatch = useAppDispatch();
   const router = useRouter();

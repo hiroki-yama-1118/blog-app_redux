@@ -5,10 +5,6 @@ import { useAppDispatch } from "../../../ducks/app/hooks";
 
 import { useRouter } from "next/router";
 import { Form, Formik } from "formik";
-import InputLg from "../../../components/Form/InputLg";
-import InputSm from "../../../components/Form/InputSm";
-import CheckBox from "../../../components/Form/CheckBox";
-import TextArea from "../../../components/Form/TextArea";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { getAllBlogsIds, getBlogData } from "../../../lib/fetch";
 import {
@@ -16,6 +12,10 @@ import {
   fetchAsyncUpdateBlog,
 } from "../../../ducks/features/blog/blogSlice";
 import { format } from "date-fns";
+import { CheckBox } from "../../../components/Form/CheckBox";
+import { InputLg } from "../../../components/Form/InputLg";
+import { InputSm } from "../../../components/Form/InputSm";
+import { TextArea } from "../../../components/Form/TextArea";
 
 const AddBlogSchema = Yup.object().shape({
   title: Yup.string()
@@ -62,6 +62,8 @@ const EditBlog: FC<BLOG> = ({
     category,
     imagePass,
   };
+  console.log("Edit:id");
+  
 
   const dispatch = useAppDispatch();
   const router = useRouter();

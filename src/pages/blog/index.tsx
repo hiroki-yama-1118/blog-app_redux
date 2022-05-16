@@ -18,6 +18,8 @@ interface STATICPROPS {
  * @returns ブログ記事一覧画面
  */
 const Blog: FC<STATICPROPS> = ({ blogs }) => {
+  console.log("Blog:index");
+
   //現在のページ
   const [pageIndex, setPageIndex] = useState(1);
   //ルーターリンク

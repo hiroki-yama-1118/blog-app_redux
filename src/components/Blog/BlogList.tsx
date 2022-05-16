@@ -14,6 +14,8 @@ type Props = {
 
 const BlogList: FC<Props> = (props) => {
   const { blogs, pageIndex, perPage, categorySearch } = props;
+  console.log("BlogList");
+  
 
   return (
     <div>

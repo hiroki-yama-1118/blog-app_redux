@@ -3,10 +3,11 @@
 import React, { FC, useState } from "react";
 import { Formik, Form } from "formik";
 import { BOOK } from "../../types/type";
-import InputLg from "../Form/InputLg";
-import InputSm from "../Form/InputSm";
-import TextArea from "../Form/TextArea";
-import CheckBox from "../Form/CheckBox";
+import { CheckBox } from "../Form/CheckBox";
+import { InputLg } from "../Form/InputLg";
+import { InputSm } from "../Form/InputSm";
+import { TextArea } from "../Form/TextArea";
+
 
 type Props = {
   initialValues: BOOK;
@@ -18,6 +19,7 @@ type Props = {
 
 const BookAddInput: FC<Props> = (props) => {
   const { initialValues, schema, createdClicked, setImg, img } = props;
+  console.log("BookAddInput");
 
   //画像保存用画像パス
   const [photo, setPhoto] = useState();

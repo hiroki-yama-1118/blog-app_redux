@@ -7,6 +7,8 @@ import {
 } from "../../ducks/features/book/bookSlice";
 
 export const SearchInputBook = () => {
+  console.log("SearchInputBook");
+
   const [keyWord, setKeyWord] = useState("");
   const dispatch = useAppDispatch();
   const books = useAppSelector(selectBooks);

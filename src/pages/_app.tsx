@@ -6,6 +6,8 @@ import Head from "next/head";
 import { AppProps } from "next/app";
 
 function MyApp({ Component, pageProps }: AppProps) {
+  console.log("app.tsx");
+
   return (
     <Provider store={store}>
       <Head>

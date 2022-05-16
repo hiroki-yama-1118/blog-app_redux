@@ -9,6 +9,8 @@ type Props = {
 
 const Layout: FC<Props> = (props) => {
   const { children } = props;
+  console.log("Layout");
+
   return (
     <div>
       <Header />

@@ -1,7 +1,7 @@
 import { Field } from "formik";
-import React from "react";
+import React, { FC, memo } from "react";
 
-const InputSm = (props: {
+type Props = {
   errors: any;
   touched: any;
   label: string;
@@ -9,8 +9,15 @@ const InputSm = (props: {
   inputName: string;
   placeholder?: string;
   type: string;
-}) => {
+};
+
+/**
+ * インプットフォームS
+ */
+export const InputSm: FC<Props> = memo(function InputSm(props) {
   const { errors, touched, label, id, inputName, placeholder, type } = props;
+  console.log("InputSm");
+
   return (
     <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
       <div className="flex">
@@ -33,6 +40,4 @@ const InputSm = (props: {
       />
     </div>
   );
-};
-
-export default InputSm;
+});

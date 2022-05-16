@@ -10,6 +10,7 @@ import { BOOK } from "../../types/type";
 import axios from "axios";
 
 const BookDetail: FC = () => {
+  console.log("BookDetail");
   const dispatch = useAppDispatch();
   const router = useRouter();
   const [bookData, setBookData] = useState<BOOK>();
@@ -44,7 +45,10 @@ const BookDetail: FC = () => {
   return (
     <div className="p-5 mx-20">
       <div>
-        <div className="text-xl mb-5 cursor-pointer" onClick={() => router.back()}>
+        <div
+          className="text-xl mb-5 cursor-pointer"
+          onClick={() => router.back()}
+        >
           ⇦戻る
         </div>
         <div className="mb-10 mr-6 text-2xl font-bold border-b-4 border-gray-400">
