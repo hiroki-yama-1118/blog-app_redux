@@ -44,30 +44,16 @@ const BookList: FC<Props> = (props) => {
                 </div>
                 <div className="flex mt-4">
                   <div className="m-4 px-2 pt-2 pb-1 rounded-sm bg-gray-100 cursor-pointer">
-                    {/* {data.imagePass !== "" ? (
-                      <Image
-                        alt={"image"}
-                        src={data.imagePass}
-                        width={120}
-                        height={180}
-                        layout={"fixed"}
-                        onClick={() => {
-                          goOnDetail(data);
-                        }}
-                      />
-                    ) : ( */}
                     <img
                       alt={"image"}
-                      src={"/img2.jpeg"}
+                      src={data.imagePass}
                       width={120}
                       height={180}
-                      loading="lazy"
-                      className="h-48"
+                      className="h-42"
                       onClick={() => {
                         goOnDetail(data);
                       }}
                     />
-                    {/* )} */}
                   </div>
                   <div className="ml-8">
                     <div className="w-100">著者名：{data.author}</div>

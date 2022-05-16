@@ -84,9 +84,10 @@ const SideBar: FC<PROPS> = (props) => {
                   >
                     <img
                       alt={"image"}
-                      src={"/img2.jpeg"}
+                      src={data.imagePass}
                       width={100}
                       height={"auto"}
+                      className="shadow"
                     />
                     <div>
                       <div className="ml-5 font-bold">{data.title}</div>
