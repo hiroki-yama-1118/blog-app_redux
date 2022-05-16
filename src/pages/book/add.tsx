@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import * as Yup from "yup";
 import { BOOK } from "../../types/type";
 import { useAppDispatch } from "../../ducks/app/hooks";
@@ -32,13 +32,14 @@ export const AddBookSchema = Yup.object().shape({
 });
 
 const Add: FC = () => {
+  //画面表示用画像パス
+  const [img, setImg] = useState<string>();
   const initialValues: BOOK = {
     _id: "",
     title: "",
     category: [],
-    imagePass: "",
+    imagePass: img as string,
     author: "",
-    // releaseAt: "",
     thoughts: "",
     link: "",
   };
@@ -55,7 +56,6 @@ const Add: FC = () => {
         category: [],
         imagePass: "",
         author: "",
-        // releaseAt: "",
         thoughts: "",
         link: "",
       })
@@ -68,6 +68,8 @@ const Add: FC = () => {
       initialValues={initialValues}
       schema={AddBookSchema}
       createdClicked={createdClicked}
+      setImg={setImg}
+      img={img}
     />
   );
 };
