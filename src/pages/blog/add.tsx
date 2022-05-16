@@ -70,9 +70,11 @@ const Add: FC = () => {
   //画像をアップロード
   const uploadPhoto = async () => {
     if (photo) {
-      const url = await fetch(
-        "https://redux-blog-api-v2.herokuapp.com/s3url"
-      ).then((res) => res.json());
+      const url = await fetch("https://redux-blog-api-v2.herokuapp.com/s3url", {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+      }).then((res) => res.json());
       const imgUrl = url.url;
 
       await fetch(imgUrl, {
