@@ -32,6 +32,9 @@ const BlogDetail: FC<BLOG> = ({
   return (
     <div className="p-5 mt-10 mx-20">
       <div>
+        <div className="text-xl mb-5" onClick={() => router.back()}>
+          ⇦戻る
+        </div>
         <div className="mb-5 text-2xl font-bold border-b-4 border-gray-400">
           ブログの詳細
         </div>

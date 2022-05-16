@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useEffect, FC, useState } from "react";
-import { useAppDispatch} from "../../ducks/app/hooks";
+import { useAppDispatch } from "../../ducks/app/hooks";
 import {
   fetchAsyncDeleteBook,
   selectBook,
@@ -46,6 +46,9 @@ const BookDetail: FC = () => {
       <div>
         <div className="mb-10 mr-6 text-2xl font-bold border-b-4 border-gray-400">
           本の詳細
+        </div>
+        <div className="text-xl mb-5" onClick={() => router.back()}>
+          ⇦戻る
         </div>
         <div className="w-11/12 my-10">
           <div className="my-4 py-3 flex justify-center">
