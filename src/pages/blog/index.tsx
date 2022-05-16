@@ -1,4 +1,4 @@
-import React, { useEffect, useState, FC } from "react";
+import React, { useEffect, useState, FC, useCallback } from "react";
 import { BLOG } from "../../types/type";
 import { GetServerSideProps, GetStaticProps } from "next";
 import { getAllBlogsData } from "../../lib/fetch";
@@ -31,8 +31,6 @@ const Blog: FC<STATICPROPS> = ({ blogs }) => {
 
   //検索ワード(コンテント)
   const [keyWord, setKeyWord] = useState("");
-  //検索ワード(カテゴリー)
-  const [keyCategory, setKeyCategory] = useState("");
   //検索結果のメッセージ
   const [msg, setMsg] = useState("");
   //表示データ
@@ -62,7 +60,7 @@ const Blog: FC<STATICPROPS> = ({ blogs }) => {
   };
 
   //検索機能（カテゴリー）
-  const categorySearch = async (value: string) => {
+  const categorySearch = useCallback(async (value: string) => {
     const res = await axios.post(
       "https://redux-blog-api-v2.herokuapp.com/blogs/search/category",
       {
@@ -74,14 +72,15 @@ const Blog: FC<STATICPROPS> = ({ blogs }) => {
       setMsg("");
       setKeyWord("");
     }
-  };
+  }, []);
 
   //検索入力フォーム内容反映
-  const handleChange = (e: {
-    target: { value: React.SetStateAction<string> };
-  }) => {
-    setKeyWord(e.target.value);
-  };
+  const handleChange = useCallback(
+    (e: { target: { value: React.SetStateAction<string> } }) => {
+      setKeyWord(e.target.value);
+    },
+    []
+  );
 
   return (
     <div>
