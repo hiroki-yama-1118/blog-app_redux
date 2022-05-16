@@ -1,6 +1,9 @@
-import React, { FC } from "react";
+import React, { FC, memo } from "react";
 
-const Footer: FC = () => {
+/**
+ * フッター
+ */
+const Footer: FC = memo(function Footer() {
   console.log("Footer");
 
   return (
@@ -8,6 +11,6 @@ const Footer: FC = () => {
       Thank you ...
     </div>
   );
-};
+});
 
 export default Footer;

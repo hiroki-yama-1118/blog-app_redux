@@ -1,7 +1,10 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
-import React, { FC } from "react";
+import React, { FC, memo } from "react";
 
-const Header: FC = () => {
+/**
+ * ヘッダー
+ */
+const Header: FC = memo(function Header() {
   console.log("Header");
 
   return (
@@ -74,17 +77,9 @@ const Header: FC = () => {
             News
           </a>
         </div>
-        {/* <div>
-          <a
-            href="/"
-            className="inline-block text-sm px-4 py-2 leading-none border rounded border-white bg-gray-300 shadow-md hover:border-transparent hover:text-teal hover:bg-gray-200 mt-4 lg:mt-0"
-          >
-            ログイン
-          </a>
-        </div> */}
       </div>
     </div>
   );
-};
+});
 
 export default Header;

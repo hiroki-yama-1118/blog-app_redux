@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from "react";
+import React, { FC, memo, ReactNode } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 import SideBar from "./SideBar";
@@ -7,7 +7,10 @@ type Props = {
   children: ReactNode;
 };
 
-const Layout: FC<Props> = (props) => {
+/**
+ * レイアウト
+ */
+const Layout: FC<Props> = memo(function Layout(props) {
   const { children } = props;
   console.log("Layout");
 
@@ -18,6 +21,6 @@ const Layout: FC<Props> = (props) => {
       <Footer />
     </div>
   );
-};
+});
 
 export default Layout;

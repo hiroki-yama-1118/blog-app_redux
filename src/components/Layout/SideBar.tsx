@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { FC } from "react";
+import React, { FC, memo } from "react";
 import { BLOG, BOOK } from "../../types/type";
 import Link from "next/link";
 
@@ -10,7 +10,10 @@ interface PROPS {
   categorySearch?: (value: string) => Promise<void>;
 }
 
-const SideBar: FC<PROPS> = (props) => {
+/**
+ * サイドバー
+ */
+const SideBar: FC<PROPS> = memo(function SideBar(props) {
   const { blogs, title, books, categorySearch } = props;
   console.log("SideBar");
 
@@ -68,6 +71,6 @@ const SideBar: FC<PROPS> = (props) => {
       </div>
     </div>
   );
-};
+});
 
 export default SideBar;
