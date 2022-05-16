@@ -80,8 +80,10 @@ const BlogList: FC<Props> = (props) => {
                       <img
                         alt={"image"}
                         src={data.imagePass}
+                        loading="lazy"
                         width={735}
                         height={"auto"}
+                        className="h-96"
                       />
                     </a>
                   </Link>

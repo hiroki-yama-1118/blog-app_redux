@@ -61,7 +61,8 @@ const BookList: FC<Props> = (props) => {
                       src={"/img2.jpeg"}
                       width={120}
                       height={180}
-                      // layout={"fixed"}
+                      loading="lazy"
+                      className="h-48"
                       onClick={() => {
                         goOnDetail(data);
                       }}

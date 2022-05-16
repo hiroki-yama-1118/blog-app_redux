@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { format } from "date-fns";
 import Link from "next/link";
 import React from "react";
