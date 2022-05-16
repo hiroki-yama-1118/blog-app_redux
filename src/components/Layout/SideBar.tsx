@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { GetServerSideProps } from "next";
 import React, { FC } from "react";
 import { getAllBlogsData } from "../../lib/fetch";
@@ -48,47 +49,53 @@ const SideBar: FC<PROPS> = (props) => {
           最新の{title}
         </div>
         {blogs &&
-          blogs.slice(-3).map((data, index) => (
-            <Link href={`/blog/${data._id}`} key={index}>
-              <a>
-                <div className="flex my-10 mx-5 bg-gray-100 p-3 shadow rounded-sm">
-                  <img
-                    alt={"image"}
-                    src={data.imagePass}
-                    width={120}
-                    height={100}
-                  />
-                  <div>
-                    <div className="ml-5 font-bold">{data.title}</div>
-                    <div className="ml-5 mt-3">{data.introductory}</div>
+          blogs
+            .slice(-3)
+            .reverse()
+            .map((data, index) => (
+              <Link href={`/blog/${data._id}`} key={index}>
+                <a>
+                  <div className="flex my-10 mx-5 bg-gray-100 p-3 shadow rounded-sm">
+                    <img
+                      alt={"image"}
+                      src={data.imagePass}
+                      width={120}
+                      height={100}
+                    />
+                    <div>
+                      <div className="ml-5 font-bold">{data.title}</div>
+                      <div className="ml-5 mt-3">{data.introductory}</div>
+                    </div>
                   </div>
-                </div>
-              </a>
-            </Link>
-          ))}
+                </a>
+              </Link>
+            ))}
         {books &&
-          books.slice(-3).map((data) => (
-            // eslint-disable-next-line react/jsx-key
-            <Link href={`/blog/${data._id}`}>
-              <a>
-                <div
-                  key={data._id}
-                  className="flex my-10 mx-5 bg-gray-100 p-3 shadow rounded-sm"
-                >
-                  <img
-                    alt={"image"}
-                    src={"/img2.jpeg"}
-                    width={100}
-                    height={"auto"}
-                  />
-                  <div>
-                    <div className="ml-5 font-bold">{data.title}</div>
-                    <div className="ml-5 mt-3">{data.author}</div>
+          books
+            .slice(-3)
+            .reverse()
+            .map((data) => (
+              // eslint-disable-next-line react/jsx-key
+              <Link href={`/blog/${data._id}`}>
+                <a>
+                  <div
+                    key={data._id}
+                    className="flex my-10 mx-5 bg-gray-100 p-3 shadow rounded-sm"
+                  >
+                    <img
+                      alt={"image"}
+                      src={"/img2.jpeg"}
+                      width={100}
+                      height={"auto"}
+                    />
+                    <div>
+                      <div className="ml-5 font-bold">{data.title}</div>
+                      <div className="ml-5 mt-3">{data.author}</div>
+                    </div>
                   </div>
-                </div>
-              </a>
-            </Link>
-          ))}
+                </a>
+              </Link>
+            ))}
       </div>
     </div>
   );
