@@ -101,7 +101,6 @@ const BookAddInput: FC<Props> = (props) => {
             validationSchema={schema}
             onSubmit={(values, actions) => {
               createdClicked(values);
-              console.log(values);
               actions.setSubmitting(false);
               actions.resetForm();
             }}

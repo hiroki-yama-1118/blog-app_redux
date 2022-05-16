@@ -94,7 +94,7 @@ const EditBlog: FC<BLOG> = ({
           validationSchema={AddBlogSchema}
           onSubmit={(values, actions) => {
             updatedClicked(values);
-            console.log(values);
+
             actions.setSubmitting(false);
             actions.resetForm();
           }}

@@ -158,7 +158,6 @@ const Add: FC = () => {
             validationSchema={AddBlogSchema}
             onSubmit={(values, actions) => {
               createdClicked(values);
-              console.log(values);
               actions.setSubmitting(false);
               actions.resetForm();
             }}

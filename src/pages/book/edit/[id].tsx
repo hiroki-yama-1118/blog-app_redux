@@ -102,7 +102,7 @@ const Add: FC = () => {
           validationSchema={AddBookSchema}
           onSubmit={(values, actions) => {
             updatedClicked(values);
-            console.log(values);
+
             actions.setSubmitting(false);
             actions.resetForm();
           }}

@@ -65,7 +65,6 @@ export const fetchAsyncDeleteBook = createAsyncThunk(
   async (id: string) => {
     const res = await axios.delete(`${apiUrl}/books/${id}`);
     if (res.status === 200) {
-      console.log("サーバー" + id);
       alert("本を削除しました");
     }
     if (res.status !== 200) {
