@@ -62,7 +62,7 @@ const Blog: FC<STATICPROPS> = ({ blogs }) => {
   //検索機能（カテゴリー）
   const categorySearch = async (value: string) => {
     const res = await axios.post(
-      "https://redux-blog-api-v2.herokuapp.com//blogs/search/category",
+      "https://redux-blog-api-v2.herokuapp.com/blogs/search/category",
       {
         category: value,
       }
