@@ -1,12 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { FC } from "react";
-import Image from "next/image";
+import React, { FC, memo } from "react";
 import { selectLoading } from "../../ducks/features/book/bookSlice";
 import { NextRouter } from "next/router";
-import Link from "next/link";
 import { BOOK } from "../../types/type";
 import { useSelector } from "react-redux";
-import { returnCodeToBr } from "../../util/methods";
 
 type Props = {
   books: BOOK[];
@@ -16,7 +13,10 @@ type Props = {
   perPage: number;
 };
 
-const BookList: FC<Props> = (props) => {
+/**
+ * 本リスト
+ */
+const BookList: FC<Props> = memo(function BookList(props) {
   const { books, goOnDetail, pageIndex, perPage } = props;
   console.log("BookList");
 
@@ -76,5 +76,5 @@ const BookList: FC<Props> = (props) => {
       </div>
     </div>
   );
-};
+});
 export default BookList;

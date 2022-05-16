@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useEffect, FC, useState } from "react";
+import React, { useEffect, FC, useState, memo } from "react";
 import { useAppDispatch } from "../../ducks/app/hooks";
 import {
   fetchAsyncDeleteBook,
@@ -9,7 +9,10 @@ import { useRouter } from "next/router";
 import { BOOK } from "../../types/type";
 import axios from "axios";
 
-const BookDetail: FC = () => {
+/**
+ * 本詳細情報コンポーネント
+ */
+const BookDetail: FC = memo(function BookDetail() {
   console.log("BookDetail");
   const dispatch = useAppDispatch();
   const router = useRouter();
@@ -114,6 +117,6 @@ const BookDetail: FC = () => {
       </div>
     </div>
   );
-};
+});
 
 export default BookDetail;

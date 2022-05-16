@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useState, FC } from "react";
+import React, { Dispatch, SetStateAction, useState, FC, memo } from "react";
 
 type Props = {
   totalCount: number; // リストの件数
@@ -7,7 +7,10 @@ type Props = {
   setPageIndex: Dispatch<SetStateAction<number>>; // 現在のページの更新関数
 };
 
-const Pagination: FC<Props> = (props) => {
+/**
+ * ページネーションコンポーネント
+ */
+const Pagination: FC<Props> = memo(function Pagination(props) {
   const { pageIndex, setPageIndex, totalCount, perPage } = props;
   console.log("Pagination");
 
@@ -41,6 +44,6 @@ const Pagination: FC<Props> = (props) => {
       <div className="mt-2 text-right">全{totalCount}件</div>
     </div>
   );
-};
+});
 
 export default Pagination;

@@ -1,8 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import React, { FC } from "react";
+import React, { FC, memo } from "react";
 import { format } from "date-fns";
-import Image from "next/image";
 import { BLOG } from "../../types/type";
 
 type Props = {
@@ -12,10 +11,12 @@ type Props = {
   categorySearch: (value: string) => Promise<void>;
 };
 
-const BlogList: FC<Props> = (props) => {
+/**
+ *ブログリスト
+ */
+const BlogList: FC<Props> = memo(function BlogList(props) {
   const { blogs, pageIndex, perPage, categorySearch } = props;
   console.log("BlogList");
-  
 
   return (
     <div>
@@ -103,6 +104,6 @@ const BlogList: FC<Props> = (props) => {
           ))}
     </div>
   );
-};
+});
 
 export default BlogList;

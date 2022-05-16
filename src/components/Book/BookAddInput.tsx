@@ -1,13 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable jsx-a11y/alt-text */
-import React, { FC, useState } from "react";
+import React, { FC, memo, useState } from "react";
 import { Formik, Form } from "formik";
 import { BOOK } from "../../types/type";
 import { CheckBox } from "../Form/CheckBox";
 import { InputLg } from "../Form/InputLg";
 import { InputSm } from "../Form/InputSm";
 import { TextArea } from "../Form/TextArea";
-
 
 type Props = {
   initialValues: BOOK;
@@ -17,7 +16,10 @@ type Props = {
   img: string | undefined;
 };
 
-const BookAddInput: FC<Props> = (props) => {
+/**
+ *本登録コンポーネント
+ */
+const BookAddInput: FC<Props> = memo(function BookAddInput(props) {
   const { initialValues, schema, createdClicked, setImg, img } = props;
   console.log("BookAddInput");
 
@@ -184,6 +186,6 @@ const BookAddInput: FC<Props> = (props) => {
       </div>
     </div>
   );
-};
+});
 
 export default BookAddInput;
