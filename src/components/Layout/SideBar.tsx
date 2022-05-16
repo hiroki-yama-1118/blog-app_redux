@@ -74,14 +74,11 @@ const SideBar: FC<PROPS> = (props) => {
           books
             .slice(-3)
             .reverse()
-            .map((data) => (
+            .map((data, index) => (
               // eslint-disable-next-line react/jsx-key
-              <Link href={`/blog/${data._id}`}>
+              <Link href={`/blog/${data._id}`} key={index}>
                 <a>
-                  <div
-                    key={data._id}
-                    className="flex my-10 mx-5 bg-gray-100 p-3 shadow rounded-sm"
-                  >
+                  <div className="flex my-10 mx-5 bg-gray-100 p-3 shadow rounded-sm">
                     <img
                       alt={"image"}
                       src={data.imagePass}
