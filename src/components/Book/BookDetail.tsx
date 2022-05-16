@@ -1,16 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useEffect, FC, useState } from "react";
-import Image from "next/image";
-import { useAppDispatch, useAppSelector } from "../../ducks/app/hooks";
+import { useAppDispatch} from "../../ducks/app/hooks";
 import {
   fetchAsyncDeleteBook,
   selectBook,
-  selectSelectedBook,
 } from "../../ducks/features/book/bookSlice";
 import { useRouter } from "next/router";
 import { BOOK } from "../../types/type";
 import axios from "axios";
-import { returnCodeToBr } from "../../util/methods";
 
 const BookDetail: FC = () => {
   const dispatch = useAppDispatch();
@@ -55,7 +52,7 @@ const BookDetail: FC = () => {
             <div className="w-2/4 ">
               <img
                 alt={"image"}
-                src={"/img2.jpeg"}
+                src={bookData?.imagePass}
                 width={300}
                 height={500}
                 className="w-9/12"
