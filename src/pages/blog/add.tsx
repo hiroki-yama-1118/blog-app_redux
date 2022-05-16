@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable jsx-a11y/alt-text */
 import { Formik, Form, Field } from "formik";
 import React, { FC, useState } from "react";
@@ -147,7 +148,7 @@ const Add: FC = () => {
         </div>
         {img && (
           <div className="mb-10 flex justify-center">
-            <Image src={img} width={400} height={"auto"} />
+            <img src={img} width={400} height={"auto"} />
           </div>
         )}
 

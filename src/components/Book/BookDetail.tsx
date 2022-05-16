@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useEffect, FC, useState } from "react";
 import Image from "next/image";
 import { useAppDispatch, useAppSelector } from "../../ducks/app/hooks";
@@ -20,7 +21,9 @@ const BookDetail: FC = () => {
 
   useEffect(() => {
     const fetchGetBook = async () => {
-      const res = await axios.get(`https://redux-blog-api.herokuapp.com/books/${bookId}`);
+      const res = await axios.get(
+        `https://redux-blog-api.herokuapp.com/books/${bookId}`
+      );
       if (res.status !== 200) {
         alert(Error);
       }
@@ -49,12 +52,12 @@ const BookDetail: FC = () => {
         </div>
         <div className="w-11/12 my-10">
           <div className="my-4  py-3 flex justify-center">
-            <Image
+            <img
               alt={"image"}
               src={"/img2.jpeg"}
               width={200}
               height={300}
-              layout={"fixed"}
+              // layout={"fixed"}
             />
           </div>
           <div className="text-xl font-bold border-b-4 border-yellow-400 border-double">

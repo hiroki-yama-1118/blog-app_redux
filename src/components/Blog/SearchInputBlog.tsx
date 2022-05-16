@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import axios from "axios";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -10,9 +11,12 @@ const SearchInputBlog = () => {
   const [blogs, setBlogs] = useState([]);
 
   const clickSearch = async (value: string) => {
-    const res = await axios.post("https://redux-blog-api.herokuapp.com/blogs/search/content", {
-      content: value,
-    });
+    const res = await axios.post(
+      "https://redux-blog-api.herokuapp.com/blogs/search/content",
+      {
+        content: value,
+      }
+    );
     setBlogs(res.data);
     setKeyWord("");
   };
@@ -122,12 +126,12 @@ const SearchInputBlog = () => {
                         layout={"fixed"}
                       />
                     ) : ( */}
-                        <Image
+                        <img
                           alt={"image"}
                           src={"/img2.jpg"}
                           width={735}
                           height={300}
-                          layout={"responsive"}
+                          // layout={"responsive"}
                         />
                         {/* )} */}
                       </a>

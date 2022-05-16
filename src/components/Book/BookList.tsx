@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { FC } from "react";
 import Image from "next/image";
 import { selectLoading } from "../../ducks/features/book/bookSlice";
@@ -55,12 +56,12 @@ const BookList: FC<Props> = (props) => {
                         }}
                       />
                     ) : ( */}
-                    <Image
+                    <img
                       alt={"image"}
                       src={"/img2.jpeg"}
                       width={120}
                       height={180}
-                      layout={"fixed"}
+                      // layout={"fixed"}
                       onClick={() => {
                         goOnDetail(data);
                       }}

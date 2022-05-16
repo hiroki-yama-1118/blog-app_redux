@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable jsx-a11y/alt-text */
 // import { useRouter } from "next/router";
 // import { useEffect } from "react";
@@ -93,7 +94,7 @@ const Home = () => {
       <input type="file" onChange={selectPhoto} />
       <button onClick={uploadPhoto}>Upload</button>
       <div>
-        <Image src={img} />
+        <img src={img} />
       </div>
     </div>
   );
