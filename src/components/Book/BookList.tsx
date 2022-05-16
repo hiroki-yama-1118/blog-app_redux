@@ -48,20 +48,20 @@ const BookList: FC<Props> = (props) => {
                       alt={"image"}
                       src={data.imagePass}
                       width={120}
-                      height={180}
-                      className="h-42"
+                      height={"auto"}
+                      className="h-40 w-28 shadow"
                       onClick={() => {
                         goOnDetail(data);
                       }}
                     />
                   </div>
-                  <div className="ml-8">
-                    <div className="w-100">著者名：{data.author}</div>
+                  <div className="ml-8 w-4/5">
+                    <div className="w-4/5">著者名：{data.author}</div>
 
-                    <div className="w-100 mt-3 p-3 bg-yellow-50">
+                    <div className="w-4/5 mt-3 p-3 bg-yellow-50">
                       {data.thoughts}
                     </div>
-                    <div className="w-100 mt-5 text-blue-500 underline">
+                    <div className="w-4/5 mt-5 text-blue-500 underline">
                       {data.link ? (
                         <a href={data.link}>{data.title}のリンク先はこちら</a>
                       ) : (
